@@ -1,6 +1,5 @@
 # Thodi on Trading
 ---
-
 ## Introduction
 
 This is my blog where I share my experiences, lessons and the knowledge that I learn on my journey becoming a financial analyst, trader and investor.
