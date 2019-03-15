@@ -4,8 +4,8 @@
 title:               Thodi on trading
 tagline:             'the making of a trader'
 description:         'I share my experiences, lessons and knowledge I acquire on my journey into the world of financial trading and investing.'
-url:                 'http://minicomp.github.io'
-baseurl:             '/thodi'
+url:                 'http://blog.miyanda.org'
+baseurl:             ''
 
 # About/contact
 author:
