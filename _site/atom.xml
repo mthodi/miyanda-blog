@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Thodi on trading</title>
+ <link href="http://localhost:4000/thodi/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/thodi/"/>
+ <updated>2019-03-15T16:40:16+02:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>Martin Thodi</name>
+   <email>martthodi238[at]gmail.com</email>
+ </author>
+
+ 
+
+</feed>

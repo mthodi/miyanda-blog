@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <script type="text/javascript" src="/thodi/assets/js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="/thodi/texts/piotroski-f-score/" />
+
+  <!-- Basic meta elements -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta name="DC.title" content="Using Piotroski F-Score to screen and trade stocks" />
+  <meta name="DC.creator" content="Martin Thodi" />
+  <meta name="DC.contributor" content="" />
+  <meta name="DC.date" content="2018-03-13" />
+  <meta name="DC.rights" content="Creative Common Licence" />
+  <meta name="DC.source" content="Thodi on trading" />
+
+    <!-- Open Graph metadata -->
+    
+    <meta property="og:title" content="Using Piotroski F-Score to screen and trade stocks" />
+    <meta property="og:description" content="An Ed edition">
+    <meta property="fb:admins" content="elotroalex" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://localhost:4000/thodi/texts/piotroski-f-score/" />
+    <meta property="fb:app_id" content="589495744558280" />
+    <meta property="og:image" content="http://localhost:4000/thodi/assets/open-graph-logo.png" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+
+  <title>
+    
+      Using Piotroski F-Score to screen and trade stocks
+    
+  </title>
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/thodi/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/thodi/assets/apple-touch-icon-precomposed.png" />
+  <link rel="shortcut icon" href="/thodi/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/thodi/atom.xml" />
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Using Piotroski F-Score to screen and trade stocks</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/thodi/">Home</a>
+    <a class="sidebar-nav-item" href="#" data-proofer-ignore>Return to Top</a>
+    
+    <a class="sidebar-nav-item sidebar-nav-item-toc" href="#introduction">Introduction</a>
+    
+    <a class="sidebar-nav-item sidebar-nav-item-toc" href="#book-value-market-value">Book Value & Market Value</a>
+    
+    <a class="sidebar-nav-item sidebar-nav-item-toc" href="#introducing-piotroski-score">Introducing Piotroski Score</a>
+    
+    <a class="sidebar-nav-item sidebar-nav-item-toc" href="#calculation-of-the-score">Calculation of the score</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+     Edited by , 2019.
+    </p>
+  </div>
+</div>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/thodi/" title="Home">Thodi on trading</a>
+            <br><small>the making of a trader</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content" id="main">
+        <div class="narrative">
+  <h1 class="text-title">Using Piotroski F-Score to screen and trade stocks</h1>
+  <p class="citation"> by Martin Thodi</p>
+  <hr />
+
+<h2 id="introduction">Introduction</h2>
+<p>One of the most important things an investor/trader has to do is to pick the stocks one wishes to invest in. There are many ways to analyze stocks, but they generally fall into two approaches : fundamental analysis and technical analysis. In technical analysis, the investor/trader looks at a stock’s historical prices as well as the trading volume (number of shares that were traded at a given price) with an attempt to predict the stock’s future price movements. The technical analyst believes that all the information one needs to know about a stock is reflected in the price of the stock.</p>
+
+<p>On the other hand, fundamental analysis looks at company fundamental information such as company profits, amount of debt the company has, the rate at which the company’s profits are growing, the cost of operating the company, the competency of the management team and so on. As one can imagine, there is an ongoing debate as to which approach is superior. Whichever approach one uses, the ultimate aim is to decide whether to buy the stock, sell it, short it (sell it without buying it first) or hold on to it if one already bought it.</p>
+
+<p>In this article, I will present the Piotroski F-score, a fundamental analysis strategy for selecting stocks to buy and/or short if allowed. I shall use companies listed on the Malawi Stock exchange as examples.</p>
+
+<h2 id="book-value--market-value">Book Value &amp; Market Value</h2>
+
+<p>Before introducing the Piotroski score, it is best to first introduce the concept of a company’s <strong><em>book value</em></strong> and its  <strong><em>market value</em></strong>.  The book value of a company is the total value of the company’s assets that its shareholders would receive if the company was liquidated. Suppose some company XYZ has $300 dollars worth of office furniture, a small factory that is worth $1000 and a bank loan of $200. The book value of XYZ is then $1100 because if the company was to be liquidated and all assets sold; $200 would be paid to back to the bank and the owners would get $1100 ($1000 + $300 - $200) remaining to share amongst themselves.</p>
+
+<p>On the other hand, market value is the total amount a company would fetch in the marketplace. If we assume that XYZ has 5 shares and that it is a public company trading on some stock exchange at a current price of $150 per share; then the market value of XYZ is $750 (5 shares x $150). This means that if the owners of the company decided to sell the whole company on the stock exchange to a new set of owners, they would receive $750 to divide amongst themselves. You must have noticed the difference here. If they liquidate the company they get $1100 but if they sell the company to the market they get $750, why the difference? It could be because other investors believe that if the company was liquidated, you would not get the $1100 but a much lower figure. Maybe the factory is too old or not useful anymore so it would not sell at $1000 but at $500. Maybe the office furniture is actually worthless. Or maybe the market is simply just <em>underpricing</em> the stock; and in time people would realize how much XYZ is really worth and its price would rise to reflect the true value of the company. A contrived example perhaps but the takeaway here is that markets sometimes underprice good companies.</p>
+
+<p>Looking for companies that are undervalued at the marketplace but might actually be worth more is the tenet of <strong><em>value investing</em></strong>.  How do you find an undervalued company? One common way is to pick companies that have a high book-to-market (BM) ratio. Not all companies with a high BM ratio are good for investment though, and indeed a lot of them might actually be in financial distress, that is why the market is asking for a low price for them in the first place! Piotroski in [1] presented a score that can be used to choose good companies from a set of high BM companies.</p>
+
+<h2 id="introducing-piotroski-f-score">Introducing Piotroski F-Score</h2>
+<p>The Piotroski Score is a number between 0-9, with 9  symbolizing the best company, while 0 being the poorest performing company. The score is calculated as a composite score of 9 financial performance signals that show the company’s profitability, operational efficiency and capital structure.</p>
+
+<h2 id="calculation-of-score">Calculation of score</h2>
+<p>The calculation of the score is as follows; we consider a given financial performance signal, if the signal is good a score of 1 is assigned to an indicator variable for the company, otherwise we assign a 0. In the end, the final score (termed F_SCORE by Piotroski) is a sum of all the indicator variables. Thus, if all the signals were good for the company, the F_SCORE will be 9. Similarly, an F_SCORE of 0 would mean all signals were bad. Signals used are presented subsequently.</p>
+
+<h3 id="profitability-signals"><em>Profitability Signals</em></h3>
+<h4 id="1-roa">1. ROA</h4>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{gather}
+    ROA =\frac{\text{Net Income before extraordinary items}}{\text{Total Assets at the beggining of the year}} \\
+    \text{}\\
+
+    \text{F_ROA} = \begin{cases}
+        1 & \text{if $ROA>1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather} %]]></script>
+
+<h4 id="2-cfo">2. CFO</h4>
+<p>The secon signal is based on Cash Flow from operations. This is calculated as follows:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{gather}
+    CFO =\frac{\text{CFO}}{\text{Total Assets at the beggining of the year}} \\
+    \text{}\\
+
+    \text{F_CFO} = \begin{cases}
+        1 & \text{if $CFO>1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather} %]]></script>
+
+<h4 id="3-deltatextroa">3. <script type="math/tex">\Delta\text{ROA}</script></h4>
+<p>The third signal measures a change in ROA. The idea being that company with increasing ROA is better.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{gather}
+    \Delta\text{ROA} =\text{current period ROA} - \text{previous period ROA} \\
+    \text{}\\
+    \text{F_}\Delta\text{ROA} = \begin{cases}
+        1 & \text{if $\Delta ROA>1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather} %]]></script>
+
+<h4 id="4-accrual">4. <em>ACCRUAL</em></h4>
+<p>To understand the rationale for using this signal, we have to remember that most companies make their financial reports using an accrual basis of accounting (transactions are recorded when goods and services are sold/bought and not necessarily when cash is received/paid). For example a company selling its goods on credit can report a profit of  $8000 when it has not received any of that in cash. Therefore, if most of the buyers later default on their payments, the company might have to write down their profits to a lower figure. Now accrual basis for accounting is not bad, but remember we are dealing with companies that might be in financial trouble, thus it would be prudent to know the quality of the company’s earnings. When they report profits of $8000, how much of it is really in the company’s bank account?</p>
+
+<p>ACCRUAL is calculated as follows:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{gather}
+    \Delta\text{ACCRUAL} =\frac{\text{Net Income} - \text{CFO}}{\text{Total Assets at the beginning of the year}} \\
+    \text{}\\
+    \text{F_ACCRUAL} = \begin{cases}
+        1 & \text{if $ACCRUAL<1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather} %]]></script>
+
+<h3 id="capital-structure-signals"><em>Capital Structure Signals</em></h3>
+<p>A company’s capital structure is how the company is using various sources of funds to finance its operations and/or growth. Sources
+of funds for a company include long-term loans and selling new shares on the market.</p>
+
+<h4 id="5-deltatextlever">5. <script type="math/tex">\Delta\text{LEVER}</script></h4>
+
+<p>This signal measures the change in the company’s usage of long-term debt. Thus, in our universe of high BH firms, rising 
+usage of debt is not good.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{gather}
+    \Delta\text{LEVER} =\text{current period Leverage Ratio} - \text{previous year Leverage Ratio} \\
+    \text{}\\
+    \text{where Leverage Ratio} = \frac{\text{total long-term debt}}{\text{total assets}},  \\ 
+    \text{}\\
+    \text{F_}\Delta\text{LEVER} = \begin{cases}
+        1 & \text{if $\Delta LEVER<1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather} %]]></script>
+
+<h4 id="6-deltatextliquid">6. <script type="math/tex">\Delta\text{LIQUID}</script></h4>
+<p>Measures the change in the firm’s usage of short-term debt. 
+We use <script type="math/tex">\text{current ratio} ( \text{current assets} / \text{current liabilities} )</script> to measure the a firm’s usage of short-term debt.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{gather}
+    \Delta\text{LIQUID} =\text{current period Current Ratio} - \text{previous year Current Ratio} \\
+    \text{}\\
+    \text{F_$\Delta$LIQUID} = \begin{cases}
+        1 & \text{if $\Delta LIQUID<1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather} %]]></script>
+
+<h4 id="7-eq_offer">7. <em>EQ_OFFER</em></h4>
+<p>This signal reflects if a company offered new equity in the current reporting period. Here is the rationale for this mesure. 
+In our universe of high BM firms, a business that requires repeated investments from owners is not a good business.
+Therefore, if a company offered new equity in the current period, <script type="math/tex">\text{F_EQ_OFFER} = 0</script> otherwise if no new equity was offered,
+then <script type="math/tex">\text{F_EQ_OFFER} = 1</script>.</p>
+
+<h3 id="operating-efficiency-signals"><em>Operating Efficiency Signals</em></h3>
+<p>These signals measure how well a company is using its resources to generate revenue.</p>
+
+<h4 id="8-deltatextmargin">8. <script type="math/tex">\Delta\text{MARGIN}</script></h4>
+<p>MARGIN is defined as the firm’s current margin ratio (<script type="math/tex">\text{gross margin / total sales}</script>)</p>
+
+<h4 id="9-deltatextturn">9. <script type="math/tex">\Delta\text{TURN}</script></h4>
+
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+ </body>
+</html>
