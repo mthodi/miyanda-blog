@@ -18,7 +18,7 @@ One of the most important things an investor/trader has to do is to pick the sto
 
 On the other hand, fundamental analysis looks at company fundamental information such as company profits, amount of debt the company has, the rate at which the company’s profits are growing, the cost of operating the company, the competency of the management team and so on. As one can imagine, there is an ongoing debate as to which approach is superior. Whichever approach one uses, the ultimate aim is to decide whether to buy the stock, sell it, short it (sell it without buying it first) or hold on to it if one already bought it. 
 
-In this article, I will present the Piotroski F-score, a fundamental analysis strategy for selecting stocks to buy and/or short if allowed. I shall use companies listed on the Malawi Stock exchange as examples.
+In this article, I will present the Piotroski F-score, a fundamentals based trading strategy that was [published](https://www.chicagobooth.edu/~/media/FE874EE65F624AAEBD0166B1974FD74D.pdf) by Joseph Piotroski in 2002.
 
 ## Book Value & Market Value
 
@@ -122,7 +122,7 @@ We use $$ \text{current ratio} ( \text{current assets} / \text{current liabiliti
 
 $$
 \begin{gather}
-    \Delta\text{LIQUID} =\text{current period Current Ratio} - \text{previous year Current Ratio} \\
+    \Delta\text{LIQUID} =\text{current period Current Ratio} - \text{previous period Current Ratio} \\
     \text{}\\
     \text{F_$\Delta$LIQUID} = \begin{cases}
         1 & \text{if $\Delta LIQUID<1$, }\\
@@ -142,9 +142,53 @@ then $$ \text{F_EQ_OFFER} = 1 $$.
 These signals measure how well a company is using its resources to generate revenue.
 
 #### 8. $$ \Delta\text{MARGIN} $$
-MARGIN is defined as the firm's current margin ratio ($$ \text{gross margin / total sales} $$)
+MARGIN is defined as the firm's current margin ratio (GM) ($$ \text{gross margin / total sales} $$)
+
+$$
+\begin{gather}
+    \Delta\text{MARGIN} =\text{current period GM ratio} - \text{previous period GM ratio} \\
+    \text{}\\
+    \text{F_$\Delta$MARGIN} = \begin{cases}
+        1 & \text{if $\Delta MARGIN>1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather}
+
+$$
 
 
 #### 9. $$ \Delta\text{TURN} $$
+
+Turnover ratio (total sales / total assets @ beginning of year) measures the productivity of a company's asset base. 
+
+$$
+\begin{gather}
+    \Delta\text{TURN} =\text{current period turnover ratio} - \text{previous period turnover ratio} \\
+    \text{}\\
+    \text{F_$\Delta$TURN} = \begin{cases}
+        1 & \text{if $\Delta TURN>1$, }\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{gather}
+\text{}\\
+$$
+
+An increasing turnover ratio implies an increasing productivity of a company's asset base.
+
+#### Calculating the total F_SCORE
+Once all the indicator variables are calculated as above, the final F_SCORE is simply an addition of all the 9 indicator variables. A company that has an F_SCORE of 9 is considered to be in good condition while a company of an F_SCORE of 0 is poor.
+
+
+#### Trading Strategy
+Once F_SCOREs of companies have been calculated one can use a long/short strategy. One can then buy (go long on) the companies with 
+a high F_SCORE (9, 8 or even 7). If short selling is allowed then one can short the companies with a
+low F_SCORE (0,1 or even 2).  In an environment where short selling is not allowed, only going long on high F_SCORE firms will suffice.
+
+
+#### When would be the right time to trade?
+The trading strategy only uses publicly avaiable information (financial reports). One can choose which reports to use, quarterly or final year results. The best time trade then would be soon after the reports are released.
+
+#### Conclusion
+I have presented a trading strategy based on Piotroski F-Score. It is based in the paper published by Piotroski. A copy of the paper can be obtained [here](https://www.chicagobooth.edu/~/media/FE874EE65F624AAEBD0166B1974FD74D.pdf). In another post, I will show the strategy in action.
 
 
